@@ -1,13 +1,4 @@
 <?php 
-/*
- * 日志管理控制器
- * Auth   : Ghj
- * Time   : 2015年10月09日 
- * QQ     : 912524639
- * Email  : 912524639@qq.com
- * Site   : http://guanblog.sinaapp.com/
- */
- 
 namespace Admin\Controller;
 
 class ActionLogController extends AdminCoreController {
@@ -19,10 +10,6 @@ class ActionLogController extends AdminCoreController {
         $this->Model = D('ActionLog');
     }
 	
-    /* 列表(默认首页)
-     * Auth   : Ghj
-     * Time   : 2015年10月09日 
-     **/
 	public function index(){
 		if(IS_POST){
 			$post_data=I('post.');
