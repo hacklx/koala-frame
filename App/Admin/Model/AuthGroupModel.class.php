@@ -1,13 +1,4 @@
 <?php 
-/*
- * 用户组管理模型
- * Auth   : Ghj
- * Time   : 1444387970 
- * QQ     : 912524639
- * Email  : 912524639@qq.com
- * Site   : http://guanblog.sinaapp.com/
- */
- 
 namespace Admin\Model;
 use Think\Model;
 
