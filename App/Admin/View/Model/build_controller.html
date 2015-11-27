@@ -1,14 +1,3 @@
-
-
-/*
- * {$ModelInfo['title']}控制器
- * Auth   : Ghj
- * Time   : <?php echo date("Y年m月d日",time());?> 
- * QQ     : 912524639
- * Email  : 912524639@qq.com
- * Site   : http://guanblog.sinaapp.com/
- */
- 
 namespace Admin\Controller;
 
 class {$ModelInfo['name']}Controller extends AdminCoreController {
@@ -19,12 +8,7 @@ class {$ModelInfo['name']}Controller extends AdminCoreController {
         parent::_initialize();
         $this->Model = D('{$ModelInfo['name']}');
     }
-	
-    /* 列表(默认首页)
-     * Auth   : Ghj
-     * Time   : <?php echo date("Y年m月d日",time());?> 
-     **/
-	public function index(){
+    public function index(){
 		if(IS_POST){
 			$post_data=I('post.');
 			$post_data['first'] = $post_data['rows'] * ($post_data['page'] - 1);
@@ -111,10 +95,6 @@ echo '                $_list [$list_key]["'.$field["name"].'"]=date("Y年m月d�
 		}
 	}
 	
-    /* 搜索
-     * Auth   : Ghj
-     * Time   : <?php echo date("Y年m月d日",time());?> 
-     **/
 	protected function _search() {
 		$map = array ();
 		$post_data=I('post.');
@@ -139,10 +119,6 @@ echo '                $_list [$list_key]["'.$field["name"].'"]=date("Y年m月d�
 		} ?>return $map;
 	}
     
-    /* 添加
-     * Auth   : Ghj
-     * Time   : <?php echo date("Y年m月d日",time());?> 
-     **/
 	public function add(){
 		if(IS_POST){
 			$post_data=I('post.');
@@ -179,10 +155,6 @@ echo '                $_list [$list_key]["'.$field["name"].'"]=date("Y年m月d�
 		}
 	}
 	
-    /* 编辑
-     * Auth   : Ghj
-     * Time   : <?php echo date("Y年m月d日",time());?> 
-     **/
 	public function edit(){
 		if(IS_POST){
 			$post_data=I('post.');
@@ -221,11 +193,7 @@ echo '                $_list [$list_key]["'.$field["name"].'"]=date("Y年m月d�
         	$this->display();
 		}
 	}
-	
-    /* 删除
-     * Auth   : Ghj
-     * Time   : <?php echo date("Y年m月d日",time());?> 
-     **/
+
 	public function del(){
 		$id=I('get.id');
 		empty($id)&&$this->error('参数不能为空！');

@@ -16,6 +16,7 @@ function Is_Auth($Auth_Rule){
 		return true;
 	}
 }
+
 /**
  * 格式化字节大小
  * @param  number $size      字节数
