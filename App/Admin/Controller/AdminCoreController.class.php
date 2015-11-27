@@ -35,7 +35,8 @@ class AdminCoreController extends CoreController {
                     'hide' => 0,
                     'status' => 1
                 );
-            } else {//如果认证key不存在超级管理组配置中,读取用户权限,根据权限获取用户组
+            } else {
+                //如果认证key不存在超级管理组配置中,读取用户权限,根据权限获取用户组
                 //实例化Auth权限管理类
                 $Auth = new \Common\Libs\Auth();
                 //获取当前用户 所在的所有组（即一个用户可以存在于多个用户组中）

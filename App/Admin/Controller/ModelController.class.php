@@ -1,14 +1,5 @@
 <?php
 
-/*
- * 核心模型控制器
- * Auth : Ghj
- * Time : 2015年07月26日
- * QQ : 912524639
- * Email : 912524639@qq.com
- * Site : http://guanblog.sinaapp.com/
- */
-
 namespace Admin\Controller;
 
 class ModelController extends AdminCoreController {
@@ -23,12 +14,6 @@ class ModelController extends AdminCoreController {
         $this->Model = D('Model');
         $this->fiepath = './App/Admin/Fields/';
     }
-
-    /*
-     * 列表(默认首页)
-     * Auth : Ghj
-     * Time : 2015年07月26日
-     */
 
     public function index() {
         if (IS_POST) {
@@ -99,12 +84,6 @@ class ModelController extends AdminCoreController {
         }
     }
 
-    /*
-     * 搜索
-     * Auth : Ghj
-     * Time : 2015年07月26日
-     */
-
     protected function _search() {
         $map = array();
         $post_data = I('post.');
@@ -145,12 +124,6 @@ class ModelController extends AdminCoreController {
         return $map;
     }
 
-    /*
-     * 添加
-     * Auth : Ghj
-     * Time : 2015年07月26日
-     */
-
     public function add() {
         if (IS_POST) {
             $post_data = I('post.');
@@ -171,12 +144,6 @@ class ModelController extends AdminCoreController {
             $this->display();
         }
     }
-
-    /*
-     * 编辑
-     * Auth : Ghj
-     * Time : 2015年07月26日
-     */
 
     public function edit() {
         if (IS_POST) {
@@ -203,12 +170,6 @@ class ModelController extends AdminCoreController {
         }
     }
 
-    /*
-     * 删除
-     * Auth : Ghj
-     * Time : 2015年07月26日
-     */
-
     public function del() {
         $id = I('get.id');
         empty($id) && $this->error('参数不能为空！');
@@ -221,12 +182,6 @@ class ModelController extends AdminCoreController {
             $this->success('删除成功！');
         }
     }
-
-    /*
-     * 系统化数据模型
-     * Auth : Ghj
-     * Time : 2015年10月11日
-     */
 
     public function generate() {
         if (!IS_POST) {
@@ -245,12 +200,6 @@ class ModelController extends AdminCoreController {
             }
         }
     }
-
-    /*
-     * 生成文件
-     * Auth : Ghj
-     * Time : 2015年10月11日
-     */
 
     public function build() {
         if (IS_POST) {
@@ -305,12 +254,6 @@ class ModelController extends AdminCoreController {
             $this->display();
         }
     }
-
-    /*
-     * 生成控制器文件
-     * Auth : Ghj
-     * Time : 2015年10月11日
-     */
 
     protected function build_action() {
         //设置生成文件的路径 末前支持在Admin模块下的生成
@@ -407,12 +350,6 @@ class ModelController extends AdminCoreController {
         file_put_contents($file, '<?php ' . $content);
     }
 
-    /*
-     * 生成模型文件
-     * Auth : Ghj
-     * Time : 2015年10月11日
-     */
-
     protected function build_model() {
         //设置生成文件的路径 末前支持在Admin模块下的生成
         $file = APP_PATH . "Admin/Model/" . $this->ModelInfo ['name'] . "Model.class.php";
@@ -429,12 +366,6 @@ class ModelController extends AdminCoreController {
         //将上一步解析的模版文件存至 文件
         file_put_contents($file, '<?php ' . $content);
     }
-
-    /*
-     * 生成菜单
-     * Auth : Ghj
-     * Time : 2015年10月11日
-     */
 
     protected function build_rule() {
         //这只是一个为了方便写完模型后不用手动添加重复菜单的函数 实际上 他还待扩

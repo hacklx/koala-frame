@@ -1,13 +1,5 @@
 <?php
 
-/*
- * 配置管理控制器
- * Auth : Ghj
- * Time : 2015-06-09
- * QQ : 912524639
- * Email : 912524639@qq.com
- * Site : http://guanblog.sinaapp.com/
- */
 namespace Admin\Controller;
 
 use Think\Db;
