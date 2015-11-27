@@ -1,0 +1,26 @@
+<extend name="Public/base"/>
+
+<block name="header">
+      <h1>Step.3</h1>
+      <h2>安装数据库</h2>
+      <h5>正在执行数据库安装</h5>
+</block>
+
+<block name="body">
+    <div id="show-list" class="license">
+    </div>
+    <script type="text/javascript">
+        var list   = document.getElementById('show-list');
+        function showmsg(msg, classname){
+            var li = document.createElement('p'); 
+            li.innerHTML = msg;
+            classname && li.setAttribute('class', classname);
+            list.appendChild(li);
+            document.scrollTop += 30;
+        }
+    </script>
+</block>
+
+<block name="footer">
+<a href="javascript:void(0);" id="install_process" class="btn btn-primary">正在安装 ...</a>
+</block>

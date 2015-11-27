@@ -1,0 +1,19 @@
+<extend name="Public/base"/>
+
+<block name="header">
+      <h1>Step.4</h1>
+      <h2>完成</h2>
+      <h5>完成系统安装</h5>
+</block>
+
+<block name="body">
+    <p><eq name="Think.session.update" value="1">升级<else/>安装</eq>完成！</p>
+	<present name="info">
+	{$info}
+	</present>
+</block>
+
+
+<block name="footer">
+    <a class="btn btn-primary btn-large" href="admin.php">登录后台</a>
+</block>
